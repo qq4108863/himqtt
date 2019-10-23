@@ -1,0 +1,20 @@
+
+###SQL注入测试规则，凡是URL、ARGS中含有select、delete等关键字视为SQL注入####################
+MainRule "rx:select|union|update|delete|insert|table|from|ascii|hex|unhex|drop" "msg:sql keywords" "mz:BODY|URL|ARGS|$HEADERS_VAR:Cookie" "s:$SQL:4" id:1000;
+
+
+###缺省是报警模式ruleAction alert，要设置为阻断模式，请开启ruleAction drop#################
+#ruleAction drop
+
+######################HTTP头错误视为攻击，默认不开启#######################################
+#ErrIsAttack on
+
+
+######默认rules目录已经加载了DDOS & CC防御，要测试并发请求，可以临时停用DDOS规则。##########
+######1.REQUEST-20-APPLICATION-CC-DDOS.conf        DDOS & CC防御############################
+######3.REQUEST-942-APPLICATION-ATTACK-SQLI.conf   SQL注入 #################################
+######4.REQUEST-941-APPLICATION-ATTACK-XSS.conf    XSS攻击##################################
+
+
+######################更多高级技术服务可以联系QQ:4108863 微信:wmkwang ######################
+
