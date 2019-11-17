@@ -26,14 +26,14 @@
   解压到任意目录，make完成后生成himqtt.
   
   3.规则
-  规则放在和himqtt同一级的rules目录，注意后缀是.conf或者.rule,更多规则请在
-  https://github.com/SpiderLabs/owasp-modsecurity-crs/下载，根据需求配置。
+  规则放在和himqtt同一级的rules目录，注意后缀是.conf或.rule,更多规则请访问
+  https://github.com/SpiderLabs/owasp-modsecurity-crs/
   具体请看rules/main.conf详细说明。
 
   
   4.运行
-  通常是himqtt前端运行1884（SSL 加密）端口，后端反向代理1883端口。
-  首先保证MQTT服务器1883端口运行正常，1884端口没占用（或者端口在config.cfg里改变配置)
+  通常himqtt前端运行1884（SSL 加密）端口，后端反向代理1883明文端口。
+  首先保证MQTT服务器1883端口运行正常，1884端口没占用（或者在config.cfg配置端口)
   ./himqtt默认读取当前目录下的confg.cfg文件， 或者./hihimqtt --config /dir/config.cfg
   具体请看config.cfg详细说明， 如果成功打印加载了rules目录下的规则，代表运行成功。
   
@@ -43,7 +43,7 @@
    具体看doc目录相关图片。
   
 三、商业版也开源  
-   更多功能如web管理源码、硬件OEM、分布式、高级防御等，请访问http://www.hihttps.com/ 获取商业版。 
+   更多功能如web管理源码、硬件OEM、分布式、高级防御等，请访问http://www.hihttps.com/ 
   QQ/微信:4108863  邮件:4108863@qq.com
   
    
